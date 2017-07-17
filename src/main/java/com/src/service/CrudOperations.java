@@ -9,5 +9,5 @@ public interface CrudOperations {
 	void insert(String query);
 	void delete(String query);
 	void selectvalues() throws ClassNotFoundException;
-	void setBeanData(DBConnect dbConnect);
+	//void setBeanData(DBConnect dbConnect);
 }

@@ -2,20 +2,24 @@ package com.src.service.impl;
 
 import java.sql.*;
 
+import org.springframework.stereotype.Component;
+
 import com.src.service.DBConnect;
 
 /**
  * @author Sourav.Samanta
  *
  */
+
+@Component("DBConnect")
 public class DBconnection implements DBConnect {
 	   String JDBC_DRIVER;  
 	   String DB_URL;
 	   String USER;
 	   String PASS;
-	   Connection conn;
+	  Connection conn;
 	   
-	   DBconnection()
+	   DBconnection( )
 	   {
 		   JDBC_DRIVER = "com.mysql.jdbc.Driver";  
 		   DB_URL = "jdbc:mysql://trainingdb.c4hhsbxtkfor.ap-south-1.rds.amazonaws.com:3306/trainingTable";
@@ -26,6 +30,7 @@ public class DBconnection implements DBConnect {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+		   
 	   }
 	   
 	   public Connection dbConnect()

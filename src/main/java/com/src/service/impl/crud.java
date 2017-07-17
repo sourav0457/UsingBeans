@@ -2,8 +2,10 @@ package com.src.service.impl;
 
 import java.sql.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.src.service.CrudOperations;
 import com.src.service.DBConnect;
@@ -13,17 +15,25 @@ import com.src.service.DBConnect;
  * @author Sourav.Samanta
  *
  */
+@Component("CrudOperations")
 public class crud implements CrudOperations{
 	
+	/*public crud(DBConnect dbConnect) {
+		super();
+		this.dbConnect = dbConnect;
+	}*/
+
 	DBConnect db;
 	Connection con;
 	Statement stmt;
+	
+	@Autowired
 	private DBConnect dbConnect;
 	//private static ApplicationContext ctx;
 	
-	public void setBeanData(DBConnect dbConnect){
+	/*public void setBeanData(DBConnect dbConnect){
 		this.dbConnect=dbConnect;
-	}
+	}*/
 	
 	/*static{
 		ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
