@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
        <bean id="CrudOperations" class="com.src.service.impl.crud"/>
-       <bean id="DBConnect" class="com.src.service.impl.DBConnection"/>
+       <bean id="DBConnect" class="com.src.service.impl.DBconnection"/>
 </beans>

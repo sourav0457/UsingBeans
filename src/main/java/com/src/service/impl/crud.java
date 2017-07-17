@@ -18,19 +18,24 @@ public class crud implements CrudOperations{
 	DBConnect db;
 	Connection con;
 	Statement stmt;
-	private static ApplicationContext ctx;
+	private DBConnect dbConnect;
+	//private static ApplicationContext ctx;
 	
-	static{
+	public void setBeanData(DBConnect dbConnect){
+		this.dbConnect=dbConnect;
+	}
+	
+	/*static{
 		ctx = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 	}
 	
 	crud(){
 		db = (DBConnect)ctx.getBean("DBConnect");	//Syntax: ctx.getBean(id_of_bean)
-	}
+	}*/
 	
 	public void create(String query){
 		
-		con = db.dbConnect();
+		con = dbConnect.dbConnect();
 		if(con!=null){
 			try {
 				stmt=con.createStatement();
